@@ -117,8 +117,7 @@ export function HeroSection() {
                       <span className="text-xs text-green-500">+12.5%</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-foreground">2.45 ETH</span>
-                      <span className="text-sm text-muted-foreground">$4,890</span>
+                      <span className="text-xl font-bold text-foreground">$4,890</span>
                     </div>
                   </div>
                 </div>

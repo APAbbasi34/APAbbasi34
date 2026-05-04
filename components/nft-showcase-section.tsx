@@ -1573,7 +1573,6 @@ export function NFTShowcaseSection() {
                   <div>
                     <p className="text-xs text-muted-foreground mb-0.5">Current Price</p>
                     <p className="text-[#d4a84b] font-bold">{nft.price}</p>
-                    <p className="text-xs text-muted-foreground">{nft.ethPrice}</p>
                   </div>
                   <Button size="sm" className="bg-gradient-to-r from-[#d4a84b] to-[#c49a3d] text-[#0a0a12] hover:from-[#e0b85c] hover:to-[#d4a84b] font-semibold rounded-xl" onClick={() => {
                     // Check if user is logged in
