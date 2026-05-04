@@ -193,37 +193,35 @@ export default function DashboardPage() {
     const handleActivity = () => {
       const currentTime = Date.now()
       setLastActivity(currentTime)
-      
-      // Check for 10 minutes of inactivity
-      const checkInactivity = () => {
-        const timeSinceLastActivity = Date.now() - lastActivity
-        if (timeSinceLastActivity > 10 * 60 * 1000) { // 10 minutes in milliseconds
-          if (typeof window !== 'undefined') {
-            localStorage.removeItem("user")
-            window.location.href = "/auth/login"
-          }
+    }
+
+    // Check for 10 minutes of inactivity
+    const checkInactivity = () => {
+      const timeSinceLastActivity = Date.now() - lastActivity
+      if (timeSinceLastActivity > 10 * 60 * 1000) { // 10 minutes in milliseconds
+        if (typeof window !== 'undefined') {
+          localStorage.removeItem("user")
+          window.location.href = "/auth/login"
         }
-      }
-
-      // Set up activity listeners
-      const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click']
-      events.forEach(event => {
-        window.addEventListener(event, handleActivity)
-      })
-
-      // Check inactivity every minute
-      const inactivityCheck = setInterval(checkInactivity, 60000) // Check every minute
-
-      // Cleanup on unmount
-      return () => {
-        events.forEach(event => {
-          window.removeEventListener(event, handleActivity)
-        })
-        clearInterval(inactivityCheck)
       }
     }
 
-    handleActivity()
+    // Set up activity listeners
+    const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click']
+    events.forEach(event => {
+      window.addEventListener(event, handleActivity)
+    })
+
+    // Check inactivity every minute
+    const inactivityCheck = setInterval(checkInactivity, 60000) // Check every minute
+
+    // Cleanup on unmount
+    return () => {
+      events.forEach(event => {
+        window.removeEventListener(event, handleActivity)
+      })
+      clearInterval(inactivityCheck)
+    }
   }, [lastActivity])
 
   const handleCopyAddress = () => {
@@ -657,7 +655,7 @@ export default function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {getSortedNFTs().slice(0, 6).map((nft) => (
+                  {getSortedNFTs().map((nft) => (
                     <div key={nft.id} className="bg-[#0a0a12]/50 rounded-lg border border-[#252535] overflow-hidden">
                       <div className="h-32 bg-gradient-to-br from-[#d4a84b]/20 to-[#b8902f]/10 flex items-center justify-center">
                         <div className="text-center">
