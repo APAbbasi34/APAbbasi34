@@ -157,6 +157,22 @@
   .text-xs {
     @apply text-xs;
   }
+  
+  /* Ensure full width on mobile */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix mobile viewport issues */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* Mobile Font Sizes */
