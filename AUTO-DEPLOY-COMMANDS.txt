@@ -1,0 +1,54 @@
+# 🚀 Vercel Auto-Deploy Commands - Copy Paste These
+
+## Step 1: Current Status
+You are currently at this prompt:
+? Which scope should contain your project? (Use arrow keys)
+> asabbasi34-5740's projects
+
+## Step 2: Press ENTER
+Just press ENTER key to select this scope
+
+## Step 3: Type These Responses Exactly
+
+When you see this prompt:
+? Link to existing project? [y/N]
+Type: N
+Press: ENTER
+
+When you see this prompt:
+? What's your project's name?
+Type: thunderstorm-nft-2024
+Press: ENTER
+
+When you see this prompt:
+? In which directory is your code located?
+Type: ./
+Press: ENTER
+
+When you see this prompt:
+? Want to override the settings? [y/N]
+Type: N
+Press: ENTER
+
+## Expected Result
+🔍  Inspecting...
+🔍  Building...
+✅  Built in 45 seconds
+📦  Deployed to production
+🎉  Live at: https://thunderstorm-nft-2024.vercel.app
+
+## Your Live Site
+URL: https://thunderstorm-nft-2024.vercel.app
+
+Admin Login:
+Email: admin@thunderstorm.com
+Password: Larkanasindhpakistan786@
+
+## Just Copy-Paste These Commands:
+1. Press ENTER (for scope)
+2. Type N + ENTER (for new project)
+3. Type thunderstorm-nft-2024 + ENTER (for project name)
+4. Press ENTER (for directory)
+5. Type N + ENTER (for default settings)
+
+That's it! Your site will be live! 🎉
