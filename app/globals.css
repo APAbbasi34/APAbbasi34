@@ -166,12 +166,37 @@
   html, body {
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
   
   /* Fix mobile viewport issues */
   .min-h-screen {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+  }
+  
+  /* Mobile NFT grid adjustments */
+  .nft-grid {
+    @apply grid-cols-1;
+    gap: 1rem;
+  }
+  
+  /* Mobile image sizing */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Mobile button sizing */
+  .btn-mobile {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  /* Mobile card adjustments */
+  .nft-card {
+    @apply w-full;
+    max-width: 100%;
   }
 }
 

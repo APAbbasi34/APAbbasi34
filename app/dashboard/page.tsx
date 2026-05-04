@@ -654,14 +654,19 @@ export default function DashboardPage() {
                 <CardDescription>Browse and manage your NFT portfolio</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 nft-grid">
                   {getSortedNFTs().map((nft) => (
                     <div key={nft.id} className="bg-[#0a0a12]/50 rounded-lg border border-[#252535] overflow-hidden">
                       <div className="h-32 bg-gradient-to-br from-[#d4a84b]/20 to-[#b8902f]/10 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="w-16 h-16 bg-[#d4a84b]/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                            <span className="text-[#d4a84b] text-xs font-bold">NFT</span>
-                          </div>
+                          <img 
+                            src={`https://picsum.photos/seed/${nft.name}${nft.id}/200/200.jpg`}
+                            alt={nft.name}
+                            className="w-16 h-16 rounded-lg object-cover mx-auto mb-2"
+                            onError={(e) => {
+                              e.currentTarget.src = `https://picsum.photos/seed/nft${nft.id}/200/200.jpg`
+                            }}
+                          />
                           <p className="text-xs text-muted-foreground">{nft.category}</p>
                         </div>
                       </div>
