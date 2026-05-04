@@ -9,8 +9,6 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   distDir: 'out',
-  assetPrefix: '/APAbbasi34',
-  basePath: '/APAbbasi34',
 }
 
 export default nextConfig
