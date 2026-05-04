@@ -38,10 +38,23 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
-              <Button size="lg" className="bg-gradient-to-r from-[#d4a84b] to-[#c49a3d] text-[#0a0a12] hover:from-[#e0b85c] hover:to-[#d4a84b] font-semibold px-8 py-6 text-base rounded-xl">
+              <Button size="lg" className="bg-gradient-to-r from-[#d4a84b] to-[#c49a3d] text-[#0a0a12] hover:from-[#e0b85c] hover:to-[#d4a84b] font-semibold px-8 py-6 text-base rounded-xl" onClick={() => {
+                // Check if user is logged in
+                if (typeof window !== 'undefined') {
+                  const user = localStorage.getItem("user")
+                  if (!user) {
+                    window.location.href = '/auth/login'
+                  } else {
+                    window.location.href = '/dashboard'
+                  }
+                }
+              }}>
                 Start Earning Now
               </Button>
-              <Button size="lg" variant="outline" className="border-[#d4a84b]/50 text-[#d4a84b] hover:bg-[#d4a84b]/10 px-8 py-6 text-base rounded-xl bg-transparent">
+              <Button size="lg" variant="outline" className="border-[#d4a84b]/50 text-[#d4a84b] hover:bg-[#d4a84b]/10 px-8 py-6 text-base rounded-xl bg-transparent" onClick={() => {
+                // Show download app message
+                alert('App download coming soon! Available on iOS and Android.')
+              }}>
                 Download App
               </Button>
             </div>
