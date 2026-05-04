@@ -12,7 +12,7 @@ const nfts = [
     price: "2.5 ETH",
     usdPrice: "$4,890",
     likes: 234,
-    image: "/images/nft-1.jpg",
+    image: "https://picsum.photos/seed/cybermonkey3421/400/400.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const nfts = [
     price: "5.8 ETH",
     usdPrice: "$11,320",
     likes: 567,
-    image: "/images/nft-2.jpg",
+    image: "https://picsum.photos/seed/goldenlion892/400/400.jpg",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const nfts = [
     price: "1.2 ETH",
     usdPrice: "$2,340",
     likes: 189,
-    image: "/images/nft-3.jpg",
+    image: "https://picsum.photos/seed/cyberwarrior156/400/400.jpg",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const nfts = [
     price: "3.4 ETH",
     usdPrice: "$6,630",
     likes: 423,
-    image: "/images/nft-4.jpg",
+    image: "https://picsum.photos/seed/chromeskull7823/400/400.jpg",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const nfts = [
     price: "4.2 ETH",
     usdPrice: "$8,190",
     likes: 312,
-    image: "/images/nft-5.jpg",
+    image: "https://picsum.photos/seed/spaceexplorer512/400/400.jpg",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const nfts = [
     price: "7.5 ETH",
     usdPrice: "$14,625",
     likes: 891,
-    image: "/images/nft-6.jpg",
+    image: "https://picsum.photos/seed/goldendragon1089/400/400.jpg",
   },
 ]
 
@@ -119,7 +119,18 @@ export function NFTShowcaseSection() {
                     <p className="text-[#d4a84b] font-bold">{nft.price}</p>
                     <p className="text-xs text-muted-foreground">{nft.usdPrice}</p>
                   </div>
-                  <Button size="sm" className="bg-gradient-to-r from-[#d4a84b] to-[#c49a3d] text-[#0a0a12] hover:from-[#e0b85c] hover:to-[#d4a84b] font-semibold rounded-xl">
+                  <Button size="sm" className="bg-gradient-to-r from-[#d4a84b] to-[#c49a3d] text-[#0a0a12] hover:from-[#e0b85c] hover:to-[#d4a84b] font-semibold rounded-xl" onClick={() => {
+                    // Check if user is logged in
+                    if (typeof window !== 'undefined') {
+                      const user = localStorage.getItem("user")
+                      if (!user) {
+                        window.location.href = '/auth/login'
+                      } else {
+                        // Handle buy action
+                        alert('NFT purchase functionality will be implemented soon!')
+                      }
+                    }
+                  }}>
                     Buy Now
                   </Button>
                 </div>
